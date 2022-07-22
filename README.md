@@ -44,11 +44,26 @@ You can start the uvicorn main.py file by the below command:
  ### Request from Postman:
     
 #### Getrequest to read the data in  the mysql database.
+
+#### cURl request:
+
+           curl --location --request GET 'http://127.0.0.1:8000/api/users'
   
  ![image](https://user-images.githubusercontent.com/109514878/180304084-089b435a-264e-4cc0-b2b6-4c3c4463ae9d.png)
  
  
  ### Postrequest to insert the data in the mysql database.
+ 
+ #### cURL request:
+ 
+        curl --location --request POST 'http://127.0.0.1:8000/api/users' \
+        --header 'Content-Type: application/json' \
+        --data-raw '{
+           "id":"1",
+           "name":"Ashok A",
+           "email":"ashok.a@inai.io"
+    
+        }'
  
  In order to insert the data to the mysql you should set Header Key as Content-Type and Header value as application/json.
  Then you can enter the detail in body as raw.
@@ -58,10 +73,25 @@ You can start the uvicorn main.py file by the below command:
 
 ### Putrequest to update the details.
 
+#### cURL request:
+
+        curl --location --request PUT 'http://127.0.0.1:8000/api/users/123' \
+        --header 'Content-Type: application/json' \
+        --data-raw '{
+          "id":"123",
+          "name":"updating....name",
+          "email": "updating...email"
+
+        }'
+
   ![image](https://user-images.githubusercontent.com/109514878/180305805-da75b0ff-345a-46f1-bf13-ed06b06e7bd0.png)
 
 ### Deleterequest to delete the data from table by entering id of the table.
 
+#### cURL request:
+
+        curl --location --request DELETE 'http://127.0.0.1:8000/api/users/0'
+        
   ![image](https://user-images.githubusercontent.com/109514878/180306238-61aae53f-5986-40e6-983e-183c17ef9327.png)
 
      
