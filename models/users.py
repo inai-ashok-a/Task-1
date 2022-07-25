@@ -4,9 +4,10 @@ from sqlalchemy.sql.sqltypes import Integer,String
 
 
 users=Table(
-    'users',meta,
+    'user_data',meta,
     Column('id',Integer),
     Column('name',String(255)),
+    Column('age',Integer),
     Column('email',String(255)),
 
 )
